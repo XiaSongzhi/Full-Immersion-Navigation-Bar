@@ -6,7 +6,7 @@
 > 原作者版权声明和 GPL-3.0 许可继续保留。
 
 **版本：** 1.0.0  
-**原项目：** [iosbar-immersive](<ORIGINAL_REPO_URL>)  
+**原项目：** [iosbar-immersive](<https://github.com/murongruyan/iosbar-immersive>)  
 **许可证：** GPL-3.0  
 **项目定位：** 基于 `iosbar-immersive` 的独立维护分支
 
