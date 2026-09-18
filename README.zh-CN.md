@@ -1,6 +1,3 @@
-
-```markdown
-<!-- README.zh-CN.md -->
 [English](README.md) | **简体中文**
 
 # iOS Bar Expressive
@@ -95,3 +92,78 @@
 git clone https://github.com/<YOUR_GITHUB_USERNAME>/<REPO_NAME>.git
 cd <REPO_NAME>
 ./gradlew assembleRelease
+```
+
+Release APK 通常输出在：
+
+```text
+app/build/outputs/apk/release/
+```
+
+本仓库按 GPL-3.0 提供对应源码。  
+如果分发修改后的 APK，也必须按 GPL-3.0 提供对应源码。
+
+---
+
+## 与原项目 `iosbar-immersive` 的关系
+
+本项目基于开源项目 `iosbar-immersive`，并进行了大量修改，包括：
+
+- SystemUI Hook 重写
+- KernelSU WebUI
+- Monet 动态取色
+- 运行时样式调节
+- 全局设置读取
+- 透明度、圆角和位置偏移控制
+
+保留的内容：
+
+- v0.4.1 核心行为和字段修改方式
+- 相同的 SystemUI 类名和字段
+- 默认宽度 `180dp`
+- 默认厚度 `6.4dp`
+- 透明遮罩处理
+- 导航栏 Insets 处理
+
+不同的内容：
+
+- Hook 框架：传统 Xposed API，而不是 LibXposed API 102
+- Hook 调用方式：使用 `hookAllMethods` 风格，而不是逐个筛选方法
+- 横条更新时机：新版会在绘制和生命周期中重新读取设置
+- 圆角计算：新版默认 `3.2dp`，不是实际像素高度的一半
+- 底部位置：使用 ColorOS 原生资源，属于 v0.4.2 的行为
+- 新增 KernelSU WebUI 和运行时配置
+
+项目定位：基于 `iosbar-immersive` 的独立维护分支。
+
+---
+
+## 许可证与合规说明
+
+- 许可证：**GPL-3.0**
+- 保留原作者版权声明。
+- 不声称代码完全由本分支从零独立编写。
+- 公开说明与 `iosbar-immersive` 的代码继承关系。
+- 本仓库提供对应源码。
+- 不得闭源分发。
+- 不得删除原作者版权和 GPL-3.0 条款。
+
+详见 [LICENSE](LICENSE)。
+
+---
+
+## 免责声明
+
+- 本模块会修改 SystemUI 行为，请自行承担风险。
+- 请提前备份，并确保自己有能力处理 SystemUI 崩溃或卡开机问题。
+- 本项目与 Apple Inc. 无关，“iOS”是 Apple Inc. 的商标。
+- 原项目 `iosbar-immersive` 作者不对本分支负责。
+- 本分支维护者不对因使用不当造成的任何损失负责。
+
+---
+
+## 致谢
+
+- 原项目：[iosbar-immersive](<ORIGINAL_REPO_URL>)
+- 感谢 `iosbar-immersive` 原作者和所有贡献者
+- 本分支由 `<YOUR_NAME>` 独立维护
