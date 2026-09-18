@@ -8,7 +8,7 @@
 > Original copyright notices and GPL-3.0 terms are preserved.
 
 **Version:** 1.0.0  
-**Original project:** [iosbar-immersive](<ORIGINAL_REPO_URL>)  
+**Original project:** [iosbar-immersive](<https://github.com/murongruyan/iosbar-immersive>)  
 **License:** GPL-3.0  
 **Project type:** Independently maintained fork based on `iosbar-immersive`
 
