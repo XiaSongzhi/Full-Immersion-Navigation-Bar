@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>iOS Bar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">SYSTEMUI STYLE</p>
+      <h1>iOS Bar</h1>
+    </div>
+    <button class="tonal compact" id="themeButton" type="button" aria-label="切换界面主题">自动</button>
+  </header>
+
+  <main>
+    <section class="preview-band" aria-labelledby="previewTitle">
+      <div class="preview-copy">
+        <p class="eyebrow">实时预览</p>
+        <h2 id="previewTitle">手势横条</h2>
+        <p id="previewSummary">180 × 6.4 dp · 原生位置</p>
+      </div>
+      <div class="phone-preview" aria-hidden="true">
+        <div class="wallpaper"></div>
+        <div class="preview-handle" id="previewHandle"></div>
+      </div>
+    </section>
+
+    <section class="settings" aria-labelledby="styleTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">外观</p>
+          <h2 id="styleTitle">横条样式</h2>
+        </div>
+        <button class="text-button" id="resetButton" type="button">恢复默认</button>
+      </div>
+
+      <div class="control-grid">
+        <article class="control" data-setting="width">
+          <div class="control-title"><label for="widthRange">长度</label><output id="widthOutput">180 dp</output></div>
+          <input id="widthRange" type="range" min="80" max="320" step="1" value="180">
+          <div class="range-labels"><span>80</span><span>320</span></div>
+        </article>
+
+        <article class="control" data-setting="height">
+          <div class="control-title"><label for="heightRange">厚度</label><output id="heightOutput">6.4 dp</output></div>
+          <input id="heightRange" type="range" min="2" max="16" step="0.1" value="6.4">
+          <div class="range-labels"><span>2</span><span>16</span></div>
+        </article>
+
+        <article class="control" data-setting="radius">
+          <div class="control-title"><label for="radiusRange">圆角</label><output id="radiusOutput">3.2 dp</output></div>
+          <input id="radiusRange" type="range" min="0" max="16" step="0.1" value="3.2">
+          <div class="range-labels"><span>0</span><span>16</span></div>
+        </article>
+
+        <article class="control" data-setting="offset">
+          <div class="control-title"><label for="offsetRange">位置微调</label><output id="offsetOutput">0 dp</output></div>
+          <input id="offsetRange" type="range" min="-20" max="40" step="1" value="0">
+          <div class="range-labels"><span>向下</span><span>向上</span></div>
+        </article>
+
+        <article class="control wide" data-setting="alpha">
+          <div class="control-title"><label for="alphaRange">不透明度</label><output id="alphaOutput">100%</output></div>
+          <input id="alphaRange" type="range" min="0.2" max="1" step="0.01" value="1">
+          <div class="range-labels"><span>20%</span><span>100%</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="actions" aria-labelledby="applyTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">应用</p>
+          <h2 id="applyTitle">写入 SystemUI</h2>
+        </div>
+        <span class="status" id="status" role="status">等待调整</span>
+      </div>
+      <div class="action-row">
+        <button class="primary" id="saveButton" type="button">保存设置</button>
+        <button class="tonal" id="restartButton" type="button">重启系统界面</button>
+      </div>
+      <p class="supporting">保存后重启系统界面即可应用。纵向位置始终以 ColorOS 原生小横条位置为基准。</p>
+    </section>
+  </main>
+
+  <dialog id="restartDialog">
+    <form method="dialog">
+      <p class="eyebrow">SYSTEMUI</p>
+      <h2>立即重启系统界面？</h2>
+      <p>屏幕会短暂闪烁，随后自动恢复。</p>
+      <div class="dialog-actions">
+        <button class="text-button" value="cancel">取消</button>
+        <button class="primary" id="confirmRestart" value="confirm">立即重启</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

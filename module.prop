@@ -1,0 +1,7 @@
+id=Full Immersion Navigation Bar
+name=Full Immersion Navigation Bar
+version=1.0
+versionCode=10
+author=XiaSongzhi
+description=Adjustable iOS-style gesture bar for ColorOS 16 with a Monet Material 3 Expressive KernelSU WebUI.
+minMagisk=24000
